@@ -1,0 +1,7 @@
+{
+  "name": "ionic-angular-getting-start",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
