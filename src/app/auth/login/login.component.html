@@ -1,0 +1,41 @@
+<ion-content class="ion-padding">
+	<h1>Login</h1>
+
+	<div id="recaptcha-container"></div>
+
+	<ion-list *ngIf="!hasCode">
+		<ion-item>
+			<ion-input
+				label="Phone number"
+				labelPlacement="floating"
+				[(ngModel)]="phoneNumber"
+			></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-button (click)="getCode()">get code</ion-button>
+		</ion-item>
+	</ion-list>
+
+	<ion-list *ngIf="hasCode">
+		<ion-item>
+			<ion-input label="Code" labelPlacement="floating" [(ngModel)]="authCode"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-button (click)="verifyCode()">login</ion-button>
+		</ion-item>
+	</ion-list>
+
+	<ion-list *ngIf="isLogin">
+		<ion-item>
+			<ion-label>
+				Login success <br />
+				Access Token:
+			</ion-label>
+		</ion-item>
+		<ion-item>
+			<ion-label>
+				{{ accessToken }}
+			</ion-label>
+		</ion-item>
+	</ion-list>
+</ion-content>
